@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+
+
+
+{% block body %}
+
+
+{% if errors %}
+<div class="alert alert-danger" role="alert">
+    {{ errors }}
+</div>
+
+{% endif %}
+
+{% if emailcheck %}
+<div class="alert alert-danger" role="alert">
+    {{ emailcheck }}
+</div>
+{% endif %}
+
+<div class="container">
+    <h1 style="text-align: center;">User Login</h1>
+    <form action="/login" method="post">
+        <label for="fname">Email</label>
+        <input class="form-control mb-3" type="text" name="email">
+        <label for="fname">Password</label>
+        <input class="form-control mb-3" type="text" name="password">
+        <button class="btn btn-outline-danger">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}

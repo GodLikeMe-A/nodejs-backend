@@ -1,0 +1,34 @@
+{% extends "home.html" %}
+
+
+{% block body %}
+
+{% for val in user %}
+
+<div class="container">
+<div class="card mb-3 mt-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4zrbkp7OfTUo0mxVFrseLrQxeG5sIi67IDg&usqp=CAU" class="img-fluid " alt="Goku image">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <b><p class="card-title"> Post By :-{{val.fname}} {{val.surname}}</p></b>
+          <p class="card-text">Ratan Naval Tata is an Indian industrialist, philanthropist, and a former chairman of Tata Sons. He was the chairman of Tata Group, from 1990 to 2012, and again, as interim chairman, from October 2016 through February 2017, and continues to head its charitable trusts.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endfor %}
+
+{%  endblock %}
+
+
+
+

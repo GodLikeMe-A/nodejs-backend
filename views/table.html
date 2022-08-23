@@ -1,0 +1,40 @@
+{% extends "home.html"%}
+
+{% block body %}
+
+
+
+<div class="container"> 
+<h1 style="text-align:center;">User Info</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th  class="table-dark" scope="col">id</th>
+        <th class="table-primary" scope="col">First Name</th>
+        <th class="table-success" scope="col">surname</th>
+        <th class="table-danger"  scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+
+{% for val in user %}
+      <tr>
+        <th class="table-light" scope="row">{{val._id}}</th>
+        <td class="table-primary" >{{ val.fname }}</td>
+        <td class="table-success" >{{ val.surname }}</td>
+        <td class="table-danger" >{{ val.email }}</td>
+        <td><a href="/edit/{{val._id}}" class="btn btn-outline-primary">Edit</a>--<form action="/delete/{{val._id}}" method="post">
+   <button type="submit" class="btn btn-outline-danger" value="{{val._id}}">Del</button>
+        </form></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+<!--Bootstrap Modal-->
+
+
+{% endblock %}
+
+</div>

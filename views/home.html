@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    {% block nav %}
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"> <img style="width:90px ;"
+                        src="data:image/jpeg;base64,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"
+                        alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/register">register</a>
+                        <a class="nav-link" href="/login">login</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block body %} {% endblock %}
+
+    <div class="container">
+        <h1>Welcome to Critical Views</h1>
+
+    </div>
+
+
+    {% block footer %}
+    <footer>
+        <div class="card mt-3">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>
+                        software is like sex : it's better when it's free..</p>
+                    <footer class="blockquote-footer"><cite title="Source Title"> Linus Torvalds </cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+
+</body>
+
+</html>

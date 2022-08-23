@@ -1,0 +1,20 @@
+
+   {% extends "home.html" %}
+    
+   {% block body%}
+
+   <div class="container">
+        <form action="/edit/{{info._id}}" method="post">
+          <!--<input type="text" name="id" hidden id="" value="{{info._id}}">-->
+            <label for="fname">First Name</label>
+            <input class="form-control mb-3" type="text" name="fname" value="{{info.fname}}">
+            <label for="fname">surname</label>
+            <input class="form-control mb-3" type="text" name="surname" value="{{info.surname}}">
+            <label for="fname">Email</label>
+            <input class="form-control mb-3" type="text" name="email" value="{{info.email}}">
+            
+    
+            <button class="btn btn-outline-primary">Submit</button>
+            
+        </div>
+            {% endblock %}

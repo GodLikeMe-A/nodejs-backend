@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+
+{% block body %}
+
+<div class="container">
+    <form action="/register" method="post">
+        <label for="fname">First Name</label>
+        <input class="form-control mb-3" type="text" name="fname">
+        <label for="fname">surname</label>
+        <input class="form-control mb-3" type="text" name="surname">
+        <label for="fname">Email</label>
+        <input class="form-control mb-3" type="text" name="email">
+        <label for="fname">Password</label>
+        <input class="form-control mb-3" type="text" name="password">
+
+        <button class="btn btn-outline-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock %}
