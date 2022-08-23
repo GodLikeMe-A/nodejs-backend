@@ -1,4 +1,4 @@
-require("dotenv").config
+
 const validator = require("validator")
 const express = require("express")
 const nunjucks = require("nunjucks")
@@ -6,14 +6,9 @@ const mongoose = require("mongoose")
 const bodParser = require("body-parser")
 const bycrypt = require("bcrypt")
 const bodyParser = require("body-parser")
-const { data } = require("jquery")
-
-
 
 var port = 8080
 var app = express()
-
-
 
 var url = "mongodb://127.0.0.1:27017/register"
 mongoose.connect(url)
@@ -33,13 +28,12 @@ var users = mongoose.model("registerationinfo", {
     email: {
         type: String,
         required: [true, "Email Required"],
+        validator:isemail
     },
     password: {
         type: String,
         required: [true, "Password require"],
-
     }
-
 })
 
 nunjucks.configure('views', {
@@ -88,17 +82,11 @@ app.post("/register", (req, res) => {
 
 })
 
-
-
-
 app.get("/login", (req, res) => {
     res.render(__dirname + "/views/login.html")
 })
 
 app.post("/login", (req, res) => {
-
- 
-
     users.findOne({ email: req.body.email }).then((user) => {
         if (user) {
             bycrypt.compare(req.body.password, user.password, (err, matched) => {
@@ -111,7 +99,6 @@ app.post("/login", (req, res) => {
 
                     res.redirect("/table")
                     console.log("Password Matched")
-
                 }
             })
         }
@@ -135,8 +122,6 @@ app.get("/edit/:id", (req, res) => {
     })
 })
 
-
-
 app.post("/edit/:id", (req, res) => {
     users.findOne({ _id: req.params.id }).then((info) => {
         info.fname = req.body.fname
@@ -147,8 +132,6 @@ app.post("/edit/:id", (req, res) => {
             if (err) throw err
             res.redirect("/table")
         })
-
-
     })
 })
 
@@ -159,9 +142,6 @@ app.post("/delete/:id", (req, res) => {
         console.log("Data Deleted")
     })
 })
-
-
-
 
 app.all("/userposts", (req, res) => {
 
