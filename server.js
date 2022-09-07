@@ -1,4 +1,4 @@
-require("dotenv").config
+
 const validator = require("validator")
 const express = require("express")
 const nunjucks = require("nunjucks")
